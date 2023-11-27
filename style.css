@@ -84,7 +84,7 @@ hr {
 	cursor: pointer;
 }
 
-.button:active {
+.button:focus {
 	background-color: var(--off-black);
 }
 
