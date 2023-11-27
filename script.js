@@ -9,18 +9,30 @@ let currentDay = date.getDate();
 let currentMonth = date.getMonth() + 1; // add one because array starts at 0
 let currentYear = date.getFullYear();
 
-const monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-
 function daysInMonth(month, year) {
 	return new Date(year, month, 0).getDate();
 }
+
+const monthDays = [
+	daysInMonth(1, currentYear),
+	daysInMonth(2, currentYear),
+	daysInMonth(3, currentYear),
+	daysInMonth(4, currentYear),
+	daysInMonth(5, currentYear),
+	daysInMonth(6, currentYear),
+	daysInMonth(7, currentYear),
+	daysInMonth(8, currentYear),
+	daysInMonth(9, currentYear),
+	daysInMonth(10, currentYear),
+	daysInMonth(11, currentYear),
+	daysInMonth(12, currentYear),
+];
 
 const form = document.querySelector("form");
 
 function validate() {
 	const inputs = document.querySelectorAll("input");
 	const dayInMonth = daysInMonth(birthMonth.value, birthYear.value);
-	console.log(dayInMonth);
 	let validator = true;
 	inputs.forEach((i) => {
 		const parent = i.parentElement;
