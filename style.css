@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
+
+:root {
+	/* primary */
+	--purple: hsl(259, 100%, 65%);
+	--light-red: hsl(0, 100%, 67%);
+
+	/* neutral */
+	--white: hsl(0, 0%, 100%);
+	--off-white: hsl(0, 0%, 94%);
+	--light-grey: hsl(0, 0%, 86%);
+	--smokey-grey: hsl(0, 1%, 44%);
+	--off-black: hsl(0, 0%, 8%);
+}
+
+body {
+	font-family: "Poppins", sans-serif;
+	background-color: var(--off-white);
+	display: grid;
+	place-content: center;
+	min-height: 100vh;
+}
+
+.card {
+	background-color: var(--white);
+	width: 35rem;
+	max-width: 46rem;
+	border-radius: 1rem 1rem 10rem;
+	padding: 3rem;
+}
+
+.date {
+	display: flex;
+	flex-direction: row;
+	color: var(--smokey-grey);
+	letter-spacing: 2px;
+}
+
+input[type="number"] {
+	font: 32px "Poppins", sans-serif;
+	padding: 0.5rem 1rem;
+	border: 1px solid var(--light-grey);
+	border-radius: 0.5rem;
+	width: 7rem; /* CHANGE LATER */
+	margin-right: 1.5rem;
+}
+
+input[type="number"]:focus {
+	outline: none;
+	border-color: var(--purple);
+}
+
+/* get rid of arrows from number input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+small {
+	color: var(--light-red);
+	font: italic 400 0.8rem "Poppins", sans-serif;
+	letter-spacing: 0;
+}
+
+.line-submit {
+	display: flex;
+	align-items: center;
+}
+
+hr {
+	margin: 2rem 0;
+	width: 100%;
+}
+
+.button {
+	border-radius: 50%;
+	border: 0;
+	padding: 1rem;
+	background-color: var(--purple);
+}
+
+.button:hover {
+	cursor: pointer;
+}
+
+.button:active {
+	background-color: var(--off-black);
+}
+
+.result span {
+	color: var(--purple);
+}
+
+.result h1 {
+	font: italic 800 5rem "Poppins", sans-serif;
+	height: fit-content;
+	line-height: 2rem;
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+	margin-top: 0.5rem;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
