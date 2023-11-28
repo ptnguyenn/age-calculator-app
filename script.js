@@ -73,7 +73,7 @@ function handleSubmit(e) {
 	e.preventDefault();
 	if (validate()) {
 		if (birthDay.value > currentDay) {
-			currentDay += monthDays[currentMonth - 1];
+			currentDay += monthDays[currentMonth--];
 			currentMonth--;
 		}
 		if (birthMonth.value > currentMonth) {
