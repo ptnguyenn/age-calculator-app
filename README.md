@@ -67,24 +67,6 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-	color: papayawhip;
-}
-```
-
-```js
-const proudOfThisFunc = () => {
-	console.log("🎉");
-};
-```
-
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
 
 **Note: Delete this note and the content within this section and replace with your own learnings.**
@@ -93,9 +75,6 @@ If you want more help with writing markdown, we'd recommend checking out [The Ma
 
 TO DO
 
-- calculation errors
-  - if user inputs the day after the current day, the correct age is calculated. if user inputs any previous days without refreshing the page, the calculation of the user's age in days is not reset.
-  - example. today is 27 november 2023. the correct age will be calculated if the user inputs 28 november 2023 and submits this date. if user inputs 27 november 2023 and submits right after the previous submit, it results in 22 years 10 months 31 days instead of 23 years 0 months 0 days.
 - mobile friendly
 
 **Note: Delete this note and the content within this section and replace with your own plans for continued development.**

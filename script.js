@@ -28,8 +28,6 @@ const monthDays = [
 	daysInMonth(12, currentYear),
 ];
 
-const form = document.querySelector("form");
-
 function validate() {
 	const inputs = document.querySelectorAll("input");
 	const dayInMonth = daysInMonth(birthMonth.value, birthYear.value);
@@ -53,6 +51,7 @@ function validate() {
 				"Must be valid month";
 			validator = false;
 		}
+		// max days in a month is 31 or if the day is not in the month (ex. 31 of april)
 		if (birthDay.value > 31 || birthDay.value > dayInMonth) {
 			birthDay.style.borderColor = "#ff5757";
 			birthDay.parentElement.querySelector("small").innerText =
@@ -73,17 +72,38 @@ function handleSubmit(e) {
 	e.preventDefault();
 	if (validate()) {
 		if (birthDay.value > currentDay) {
-			currentDay += monthDays[currentMonth--];
-			currentMonth--;
+			currentDay += monthDays[currentMonth - 1];
+			console.log(currentDay);
+			currentMonth = currentMonth - 1;
 		}
+
 		if (birthMonth.value > currentMonth) {
 			currentMonth += 12;
-			currentYear--;
+			currentYear = currentYear - 1;
 		}
 
 		let d = currentDay - birthDay.value;
 		let m = currentMonth - birthMonth.value;
 		let y = currentYear - birthYear.value;
+
+		/* if user inputs the day after the current day, the correct age is calculated.
+		if user inputs any previous days without refreshing the page,
+		the calculation of the user's age in days is not reset.
+
+		example. today is 27 november 2023.
+		the correct age will be calculated if the user inputs 28 november 2023 and submits this date.
+		if user inputs 27 november 2023 and submits right after the previous submit, 
+		it results in 22 years 10 months 31 days instead of 23 years 0 months 0 days. */
+		// these if statements is to try and correct that
+		if (d > 30) {
+			d -= 31;
+			m += 1;
+		}
+
+		if (m > 11) {
+			m -= 12;
+			y += 1;
+		}
 
 		document.getElementById("years").innerHTML = y;
 		document.getElementById("months").innerHTML = m;
@@ -91,4 +111,5 @@ function handleSubmit(e) {
 	}
 }
 
+const form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
