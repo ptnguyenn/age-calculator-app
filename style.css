@@ -23,7 +23,7 @@ body {
 
 .card {
 	background-color: var(--white);
-	width: 35rem;
+	width: 100%;
 	max-width: 46rem;
 	border-radius: 1rem 1rem 10rem;
 	padding: 3rem;
@@ -106,4 +106,15 @@ hr {
 
 .attribution a {
 	color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 500px) {
+	body {
+		display: grid;
+	}
+
+	.card {
+		background-color: blue;
+		width: 100%;
+	}
 }
